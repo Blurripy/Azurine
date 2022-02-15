@@ -24,6 +24,7 @@
 - Make Events
 
     ⚠️ The filename MUST be the name of the event
+    
     The path must be "Azurine/src/events/events/{Category: example: client, message etc...}/{eventName}.js"
     
     Example of event:
