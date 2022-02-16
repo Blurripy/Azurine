@@ -3,12 +3,14 @@
 ### A selfbot made for stealth and tree structure organization
 
 - Installation
-```bash
+    ```bash
     git clone https://github.com/Blurripy/Azurine
     cd Azurine
     npm i
     node .
-```
+    ```
+    
+    You must provide some informations like your token on "Azurine/src/util/config.json" 
 
 - Languages
 
