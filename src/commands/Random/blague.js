@@ -9,8 +9,6 @@ module.exports.help = {
   description: "Send a random french joke.",
 }
 module.exports.run = async (message, args) => {
-  message.delete();
-
   async function deleteMessage(me) {
     setTimeout(() => {
       me.delete();

@@ -5,7 +5,6 @@ module.exports.help = {
   usage: "doge (top text) ; (bottom text)"
 }
 module.exports.run = async (message) => {
-  message.delete();
   let toptext;
   let bottomtext;
   if (message.content.slice(6).includes(';')) {

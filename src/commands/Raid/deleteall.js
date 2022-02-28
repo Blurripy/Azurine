@@ -7,9 +7,6 @@ module.exports.help = {
   usage: ""
 }
 module.exports.run = async (message, args, command, client) => {
-
-  message.delete();
-
   async function deleteMessage(me) {
     setTimeout(() => {
       me.delete();

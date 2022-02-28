@@ -6,11 +6,9 @@ module.exports.help = {
   name: "help",
   aliases: ['h'],
   usage: "[command name]",
-  description: "Shows the current commands of Blurripy.",
+  description: "Shows the current commands of Azurine."
 }
 module.exports.run = async (message, args, command, client) => {
-  message.delete();
-
   if (!args[0]) {
    let categories = '';
    readdirSync("./src/commands/").forEach((dir) => {

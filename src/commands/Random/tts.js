@@ -8,7 +8,6 @@ module.exports.help = {
   args: true
 }
 module.exports.run = async (message, args, command, client) => {
-  message.delete();
 
   var text = args.join(' ');
 

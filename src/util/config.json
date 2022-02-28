@@ -1,6 +1,7 @@
 {
-  "token": "Your token here",
-  "prefix": "Your prefix here",
-  "ownerid": "Your id here",
-  "blague_token": "The token of blagues-api here"
+  "token": "mfa.YE9iH0G66D5q1DtMX68a3_oV4JCsaPpefkHif-F0W0LdtEwYBzXAqnwFo0-oUgyEqMhy6GgXm8jaQC3EqVMx",
+  "prefix": ".",
+  "ownerid": 879142030222192710,
+  "blague_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiODc5MTQyMDMwMjIyMTkyNzEwIiwibGltaXQiOjEwMCwia2V5IjoiU0I0Unl5Z0VIbXZ4cGxUMXYzSWNwaTdUa2N0ZTB5Zlp0V3poWFVMTTMyYmRGT3JWd0MiLCJjcmVhdGVkX2F0IjoiMjAyMi0wMS0yNVQxMTowNDoxNiswMDowMCIsImlhdCI6MTY0MzEwODY1Nn0.KhsWvHk-_HlxTLGPpUZl-wk1ww4sqz2P44hlfoHB84I",
+  "tenor_key": "1O9T5X4R5M0"
 }

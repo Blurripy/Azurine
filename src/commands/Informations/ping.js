@@ -4,8 +4,6 @@ module.exports.help = {
   description: "Shows the current latency.",
 }
 module.exports.run = async (message) => {
-  message.delete();
-
   async function deleteMessage(me) {
     setTimeout(() => {
       me.delete();

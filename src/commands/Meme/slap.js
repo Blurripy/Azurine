@@ -7,7 +7,6 @@ module.exports.help = {
   usage: "slap (text1; text2)"
 }
 module.exports.run = async (message) => {
-  message.delete();
   let toptext;
   let bottomtext;
   if (message.content.slice(6).includes(';')) {
