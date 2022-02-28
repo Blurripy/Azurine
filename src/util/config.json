@@ -1,5 +1,6 @@
 {
   "token": "you're token here",
+  "autodelete": (true if you wan't autodelete message),
   "prefix": "the prefix of the bot here",
   "ownerid": you're id here,
   "blague_token": "the token from "blagues-api" here",
