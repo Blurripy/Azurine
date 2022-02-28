@@ -1,5 +1,5 @@
 module.exports  = async (client, message) => {
-  const { ownerid, prefix } = require('../../util/config.json')
+  const { ownerid, prefix, autodelete } = require('../../util/config.json')
   if (message.author.bot || message.author.id != ownerid || !message.content.startsWith(prefix)) return;
   if (!message.member) message.member = await message.guild.fetchMember(message);
 
@@ -13,5 +13,6 @@ module.exports  = async (client, message) => {
   if (command) {
     command.run(message, args, command, client);
     message.delete();
+    if (autodelete === true) message.delete();
   }
 }
