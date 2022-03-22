@@ -1,5 +1,5 @@
-module.exports  = async (client, message) => {
-  const { ownerid, prefix, autodelete } = require('../../util/config.json')
+module.exports = async (client, message) => {
+  const {ownerid, prefix, autodelete} = require('../../util/config.json')
   if (message.author.bot || message.author.id != ownerid || !message.content.startsWith(prefix)) return;
   if (!message.member) message.member = await message.guild.fetchMember(message);
 
@@ -10,9 +10,16 @@ module.exports  = async (client, message) => {
 
   let command = client.commands.get(cmd);
   if (!command) command = client.commands.get(client.aliases.get(cmd));
-  if (command) {
+  else {
     command.run(message, args, command, client);
-    message.delete();
     if (autodelete === true) message.delete();
+  }
+
+  if (command.help.args && !args.length) {
+    let noArgsReply = "You must provide an argument !";
+
+    if (command.help.usage) noArgsReply += ` You must use the command like that : \n ${prefix}${command.help.name} ${command.help.usage}`;
+
+    return message.channel.send(`\`\`\`\n${noArgsReply}\n\`\`\``);
   }
 }

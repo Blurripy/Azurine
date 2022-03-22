@@ -1,10 +1,10 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2017",
     "module": "commonjs",
     "noEmitOnError": true,
     "strict": true,
-    "noImplicitAny": true
+    "noImplicitAny": false
   }
 }
