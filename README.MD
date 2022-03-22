@@ -1,4 +1,4 @@
-## Azurine SelfBot
+## Azurine Selfot
 
 ### A selfbot made for stealth and tree structure organization
 
@@ -21,7 +21,7 @@
     The path must be "Azurine/src/commands/{Category of the command}/{command}.js"
 
     Example of command:
-      ![](https://cdn.discordapp.com/attachments/903002196013101056/943261759463120977/code_example.png)
+      ![](https://cdn.discordapp.com/attachments/903002196013101056/955861860148736050/makeCommand.png)
 
 - Make Events
 
@@ -30,4 +30,4 @@
     The path must be "Azurine/src/events/events/{Category: example: client, message etc...}/{eventName}.js"
     
     Example of event:
-      ![](https://cdn.discordapp.com/attachments/903002196013101056/943265748569174046/event_example.png)
+      ![](https://cdn.discordapp.com/attachments/903002196013101056/955863549429809252/makeEvents.png)
