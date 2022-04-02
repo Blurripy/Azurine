@@ -32,14 +32,10 @@ int main()
 
       cout << "Do you wan't auto delete message when using command ? (Y/N) > ";
       cin >> config[6];
-      if (config[6] == "n" or config[6] == "N")
-      {
-        config1 += "\n    \"autodelete\": false\n}";
-      }
-      else
-      {
-        config1 += "\n    \"autodelete\": true\n}";
-      }
+      //if (config[6] == "n" or config[6] == "N") config1 += "\n    \"autodelete\": false\n}";
+      config1 += "\n    \"autodelete\": ";
+      config1 += (config[6] == "n" or config[6] == "N") ? "false" : "true";
+      config1 += "\n}";
 
       //put the JSON to config.json
       remove ("./src/util/config.json");
@@ -48,12 +44,11 @@ int main()
       json << config1;
       json.close();
 
-      cout << "\n\nHere we go ! You can download nodejs (https://nodejs.org/) and run via the installer of the selfbot ! Thank's for using my selfbot made with <3 !";
+      cout << "\n\n.---------------------------------------------------------------------.\n|                   Ready to launch the SelfBot !                     |\n|---------------------------------------------------------------------|\n| Here we go !                                                        |\n| You can download NodeJS (https://nodejs.org/) and run the selfbot ! |\n| Thank's for using my SelfBot made with <3 !                         |\n'---------------------------------------------------------------------'";
       break;
     }
     case 2:
     {
-      system ("npm i");
       system ("node .");
       break;
     }
@@ -63,7 +58,8 @@ int main()
       system ("mv ./src/util/config.json ./src/util/config/config.json.bak");
       system ("cd ../");
       system ("git clone https://github.com/Blurripy/Azurine");
-      system ("cdn Azurine");
+      system ("cd Azurine");
+      system ("npm i");
       system ("mv ./src/util/config.json.bak ./src/util/config/config.json");
     }
     
