@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
   short option;
-  cout << "                           _              _____           _        _ _           \n     /\\                   (_)            |_   _|         | |      | | |          \n    /  \\    _____   _ ____ _ _ __   ___    | |  _ __  ___| |_ ____| | | ___ ____ \n   / /\\ \\  |_  / | | |  __| |  _ \\ / _ \\   | | |  _ \\/ __| __/ _  | | |/ _ \\  __|\n  / ____ \\  / /| |_| | |  | | | | |  __/  _| |_| | | \\__ \\ || (_| | | |  __/ |   \n /_/    \\_\\/___|\\____|_|  |_|_| |_|\\___| |_____|_| |_|___/\\__\\____|_|_|\\___|_|\n\n\n\n\n\n        Installation [1]\n        Launch SelfBot [2]\n        New Command [3]\n        Reset Settings [4]\n        Quit [Control-C]\n\n\nChoose an option > ";
+  cout << "                           _              _____           _        _ _           \n     /\\                   (_)            |_   _|         | |      | | |          \n    /  \\    _____   _ ____ _ _ __   ___    | |  _ __  ___| |_ ____| | | ___ ____ \n   / /\\ \\  |_  / | | |  __| |  _ \\ / _ \\   | | |  _ \\/ __| __/ _  | | |/ _ \\  __|\n  / ____ \\  / /| |_| | |  | | | | |  __/  _| |_| | | \\__ \\ || (_| | | |  __/ |   \n /_/    \\_\\/___|\\____|_|  |_|_| |_|\\___| |_____|_| |_|___/\\__\\____|_|_|\\___|_|\n\n\n\n\n\n        Installation [1]\n        Launch SelfBot [2]\n        Update Selfbot [3]\n        Quit [Control-C]\n\n\nChoose an option > ";
   cin >> option;
 
 
@@ -20,7 +20,6 @@ int main()
       const string info[5] {"token", "User ID", "prefix", "blague token from blagues-api.fr", "tenor app key"};
       const string info1[6] {"token", "prefix", "ownerid", "blague_token", "tenor_key"};
       string config[7];
-      config[6] = "null";
       string config1 = "{";
 
       //create JSON file
@@ -58,10 +57,17 @@ int main()
       system ("node .");
       break;
     }
-    case 3: cout << "In developpement !"; break;
-    case 4: cout << "In developpement !"; break;
 
-    case 5:
+    case 3:
+    {
+      system ("mv ./src/util/config.json ./src/util/config/config.json.bak");
+      system ("cd ../");
+      system ("git clone https://github.com/Blurripy/Azurine");
+      system ("cdn Azurine");
+      system ("mv ./src/util/config.json.bak ./src/util/config/config.json");
+    }
+    
+    case 4:
     {
       while (option > 3)
       {

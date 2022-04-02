@@ -11,4 +11,4 @@ client.categories = readdirSync("./src/commands/");
   require(`./util/handlers/${handler}`)(client);
 });
 
-client.login(token)
+try {client.login(token)} catch (e) {return console.log('Error: The token is not valid. Please check the installation in the config.json file or reinstall the selfbot.')}
