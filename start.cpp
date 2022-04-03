@@ -47,6 +47,7 @@ int main()
       cout << "\n\n.---------------------------------------------------------------------.\n|                   Ready to launch the SelfBot !                     |\n|---------------------------------------------------------------------|\n| Here we go !                                                        |\n| You can download NodeJS (https://nodejs.org/) and run the selfbot ! |\n| Thank's for using my SelfBot made with <3 !                         |\n'---------------------------------------------------------------------'";
       break;
     }
+
     case 2:
     {
       system ("node .");
@@ -55,21 +56,14 @@ int main()
 
     case 3:
     {
-      system ("mv ./src/util/config.json ./src/util/config/config.json.bak");
-      system ("cd ../");
-      system ("git clone https://github.com/Blurripy/Azurine");
-      system ("cd Azurine");
-      system ("npm i");
-      system ("mv ./src/util/config.json.bak ./src/util/config/config.json");
+      system ("git init && git reset --hard && git clean -fd && git pull");
+      break;
     }
     
-    case 4:
+    default:
     {
-      while (option > 3)
-      {
-        cout << "Please enter a valid value > ";
-        cin >> option;
-      }
+      cout << "Invalid option, please try again.";
+      break;
     }
   }
 }
