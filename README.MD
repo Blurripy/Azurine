@@ -3,15 +3,10 @@
 ### A selfbot made for stealth and tree structure organization
 
 - Installation
-    ```bash
-    git clone https://github.com/Blurripy/Azurine
-    cd Azurine
-    npm i
-    node .
-    ```
     
-    You must provide some informations like your token on "Azurine/src/util/config.json" 
-
+    Open PowerShell or a terminal on Windows or a terminal for Linux/MacOS and execute these commands (You must install git, NodeJS (NPM for Linux/MacOS) and G++).
+    ![](https://cdn.discordapp.com/attachments/879450736243642429/960241896175841410/installation.png)
+    
 - Languages
 
     JavaScript and soon TypeScript
