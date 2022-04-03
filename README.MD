@@ -16,6 +16,12 @@
 
     JavaScript and soon TypeScript
 
+- Make config.json
+  
+  The path of config.json is "Azurine/src/util/config.json"
+  
+  ![](https://cdn.discordapp.com/attachments/879450736243642429/960237548473565274/makeConfig.png)
+
 - Make Commands
 
     The path must be "Azurine/src/commands/{Category of the command}/{command}.js"
