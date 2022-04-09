@@ -56,7 +56,7 @@ int main()
 
     case 3:
     {
-      system ("git init && git reset --hard && git clean -fd && git pull");
+      system ("git init && git reset --hard && git clean -fd && git pull && g++ start.cpp -o start");
       break;
     }
     
