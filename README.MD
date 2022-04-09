@@ -1,4 +1,4 @@
-## Azurine Selbfot
+## Azurine Selfbot
 
 ### A selfbot made for stealth and tree structure organization
 
