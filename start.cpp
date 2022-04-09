@@ -18,7 +18,7 @@ int main()
     case 1:
     {
       const string info[5] {"token", "User ID", "prefix", "blague token from blagues-api.fr", "tenor app key"};
-      const string info1[6] {"token", "prefix", "ownerid", "blague_token", "tenor_key"};
+      const string info1[6] {"token", "ownerid", "prefix", "blague_token", "tenor_key"};
       string config[7];
       string config1 = "{";
 
@@ -30,7 +30,7 @@ int main()
         config1 += "\n    \"" + info1[i] + "\": \"" + config[i] + "\",";
       }
 
-      cout << "Do you wan't auto delete message when using command ? (Y/N) > ";
+      cout << "Do you want auto delete message when using command ? (Y/N) > ";
       cin >> config[6];
       //if (config[6] == "n" or config[6] == "N") config1 += "\n    \"autodelete\": false\n}";
       config1 += "\n    \"autodelete\": ";
@@ -50,13 +50,13 @@ int main()
 
     case 2:
     {
-      system ("node .");
+      try {system ("node .");} catch (...) {cout << "NodeJS isn't installed ! Please install NodeJS here https://nodejs.org/ ! ";}
       break;
     }
 
     case 3:
     {
-      system ("git init && git reset --hard && git clean -fd && git pull && g++ start.cpp -o start");
+      try {system ("git init && git reset --hard && git clean -fd && git pull && g++ start.cpp -o start");} catch (...) {cout << "Git and/or G++ isn't installed ! Please install G++ and Git ! ";}
       break;
     }
     
