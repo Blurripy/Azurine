@@ -9,20 +9,26 @@ using namespace std;
 
 int main()
 {
+  #ifdef __unix__
+    system ("clear");
+  #else
+    system ("cls");
+  #endif
+
   short option;
-  cout << "                           _              _____           _        _ _           \n     /\\                   (_)            |_   _|         | |      | | |          \n    /  \\    _____   _ ____ _ _ __   ___    | |  _ __  ___| |_ ____| | | ___ ____ \n   / /\\ \\  |_  / | | |  __| |  _ \\ / _ \\   | | |  _ \\/ __| __/ _  | | |/ _ \\  __|\n  / ____ \\  / /| |_| | |  | | | | |  __/  _| |_| | | \\__ \\ || (_| | | |  __/ |   \n /_/    \\_\\/___|\\____|_|  |_|_| |_|\\___| |_____|_| |_|___/\\__\\____|_|_|\\___|_|\n\n\n\n\n\n        Installation [1]\n        Launch SelfBot [2]\n        Update Selfbot [3]\n        Quit [Control-C]\n\n\nChoose an option > ";
+  cout << "                           _              _____           _        _ _           \n     /\\                   (_)            |_   _|         | |      | | |          \n    /  \\    _____   _ ____ _ _ __   ___    | |  _ __  ___| |_ ____| | | ___ ____ \n   / /\\ \\  |_  / | | |  __| |  _ \\ / _ \\   | | |  _ \\/ __| __/ _  | | |/ _ \\  __|\n  / ____ \\  / /| |_| | |  | | | | |  __/  _| |_| | | \\__ \\ || (_| | | |  __/ |   \n /_/    \\_\\/___|\\____|_|  |_|_| |_|\\___| |_____|_| |_|___/\\__\\____|_|_|\\___|_|\n\n\n\n\n        Version 0.1 BETA\n\n        Installation [1]\n        Launch SelfBot [2]\n        Update Selfbot [3]\n        Quit [Control-C]\n\n\nChoose an option > ";
   cin >> option;
 
 
   switch (option) {
     case 1:
     {
+      // Create JSON variable to put it to src/util/config.json
       const string info[5] {"token", "User ID", "prefix", "blague token from blagues-api.fr", "tenor app key"};
       const string info1[6] {"token", "ownerid", "prefix", "blague_token", "tenor_key"};
       string config[7];
       string config1 = "{";
 
-      //create JSON file
       for (int i=0; i != 5; i++)
       {
         cout << "Please insert your " << info[i] << " > ";
@@ -32,7 +38,6 @@ int main()
 
       cout << "Do you want auto delete message when using command ? (Y/N) > ";
       cin >> config[6];
-      //if (config[6] == "n" or config[6] == "N") config1 += "\n    \"autodelete\": false\n}";
       config1 += "\n    \"autodelete\": ";
       config1 += (config[6] == "n" or config[6] == "N") ? "false" : "true";
       config1 += "\n}";
@@ -50,13 +55,14 @@ int main()
 
     case 2:
     {
-      try {system ("node .");} catch (...) {cout << "NodeJS isn't installed ! Please install NodeJS here https://nodejs.org/ ! ";}
+      try {system ("npm i && echo && echo Load SelfBot, please wait…… && echo && node .");} catch (...) {cout << "NodeJS isn't installed ! Please install NodeJS here https://nodejs.org/ ! ";}
       break;
     }
 
     case 3:
     {
-      try {system ("git init && git reset --hard && git clean -fd && git pull && g++ start.cpp -o start");} catch (...) {cout << "Git and/or G++ isn't installed ! Please install G++ and Git ! ";}
+      // git reset --hard && git clean -fd && 
+      try {system ("git init && git reset --hard && git pull && g++ start.cpp -o start");} catch (...) {cout << "Git and/or G++ isn't installed ! Please install G++ and Git ! ";}
       break;
     }
     
