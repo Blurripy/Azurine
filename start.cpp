@@ -61,7 +61,6 @@ int main()
 
     case 3:
     {
-      // git reset --hard && git clean -fd && 
       try {system ("git init && git reset --hard && git pull && g++ start.cpp -o start");} catch (...) {cout << "Git and/or G++ isn't installed ! Please install G++ and Git ! ";}
       break;
     }
