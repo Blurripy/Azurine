@@ -5,6 +5,12 @@
     "module": "commonjs",
     "noEmitOnError": true,
     "strict": true,
+    "esModuleInterop": true,
     "noImplicitAny": false
-  }
+  },
+
+  "include": [
+    "src",
+    "node_modules/puppeteer-tsd/src/index.d.ts"
+  ]
 }

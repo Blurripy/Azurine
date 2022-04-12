@@ -16,7 +16,7 @@ int main()
   #endif
 
   short option;
-  cout << "                           _              _____           _        _ _           \n     /\\                   (_)            |_   _|         | |      | | |          \n    /  \\    _____   _ ____ _ _ __   ___    | |  _ __  ___| |_ ____| | | ___ ____ \n   / /\\ \\  |_  / | | |  __| |  _ \\ / _ \\   | | |  _ \\/ __| __/ _  | | |/ _ \\  __|\n  / ____ \\  / /| |_| | |  | | | | |  __/  _| |_| | | \\__ \\ || (_| | | |  __/ |   \n /_/    \\_\\/___|\\____|_|  |_|_| |_|\\___| |_____|_| |_|___/\\__\\____|_|_|\\___|_|\n\n\n\n\n        Version 0.1 BETA\n\n        Installation [1]\n        Launch SelfBot [2]\n        Update Selfbot [3]\n        Quit [Control-C]\n\n\nChoose an option > ";
+  cout << "                           _              _____           _        _ _           \n     /\\                   (_)            |_   _|         | |      | | |          \n    /  \\    _____   _ ____ _ _ __   ___    | |  _ __  ___| |_ ____| | | ___ ____ \n   / /\\ \\  |_  / | | |  __| |  _ \\ / _ \\   | | |  _ \\/ __| __/ _  | | |/ _ \\  __|\n  / ____ \\  / /| |_| | |  | | | | |  __/  _| |_| | | \\__ \\ || (_| | | |  __/ |   \n /_/    \\_\\/___|\\____|_|  |_|_| |_|\\___| |_____|_| |_|___/\\__\\____|_|_|\\___|_|\n\n\n\n\n        Version 0.1.a BETA\n\n        Installation [1]\n        Launch SelfBot [2]\n        Update Selfbot [3]\n        Quit [Control-C]\n\n\nChoose an option > ";
   cin >> option;
 
 
@@ -42,12 +42,15 @@ int main()
       config1 += (config[6] == "n" or config[6] == "N") ? "false" : "true";
       config1 += "\n}";
 
-      //put the JSON to config.json
+      // Put the JSON to config.json
       remove ("./src/util/config.json");
       ofstream json;
       json.open("./src/util/config.json", ios::app);
       json << config1;
       json.close();
+
+      // Install librairies
+      system ("echo && echo install librairies && echo && npm i");
 
       cout << "\n\n.---------------------------------------------------------------------.\n|                   Ready to launch the SelfBot !                     |\n|---------------------------------------------------------------------|\n| Here we go !                                                        |\n| You can download NodeJS (https://nodejs.org/) and run the selfbot ! |\n| Thank's for using my SelfBot made with <3 !                         |\n'---------------------------------------------------------------------'";
       break;
@@ -55,13 +58,13 @@ int main()
 
     case 2:
     {
-      try {system ("npm i && echo && echo Load SelfBot, please wait…… && echo && node .");} catch (...) {cout << "NodeJS isn't installed ! Please install NodeJS here https://nodejs.org/ ! ";}
+      system ("echo && echo Load SelfBot, please wait…… && echo && node .");
       break;
     }
 
     case 3:
     {
-      try {system ("git init && git reset --hard && git pull && g++ start.cpp -o start");} catch (...) {cout << "Git and/or G++ isn't installed ! Please install G++ and Git ! ";}
+      system ("git init && git reset --hard && git pull && g++ start.cpp -o start");
       break;
     }
     
