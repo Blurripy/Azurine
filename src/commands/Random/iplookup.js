@@ -1,4 +1,4 @@
-const {MessageEmbed} = require('discord.js-selfbot');
+const {Messageinfo} = require('discord.js-selfbot');
 const superagent = require('superagent');
 
 module.exports.help = {
@@ -8,32 +8,24 @@ module.exports.help = {
   description: "Returns informations on a provided ip address.",
   args: true
 }
-module.exports.run = async (message, args, command, client) => {
-  async function deleteMessage(me) {
-    setTimeout(() => {
-      me.delete();
-    }, 20000)
-  }
+module.exports.run = async (message, args) => {
 
-  var ip = args[0];
-  if (!ip) return await message.channel.send("Please enter an ip address to scan.").then(m => deleteMessage(m));
+    const address = await superagent.get(`http://ip-api.com/json/${args[0]}`)
+    
+    if (address.body.status === 'fail') return message.channel.send("The address you provided is either blacklisted or invalid.").then(m => setTimeout(() => m.delete(), 2000));
 
-  async function lookup(add) {
-
-    const address = await superagent.get(`http://ip-api.com/json/${add}`);
-
-    var embed = `\`\`\`\n    Ip Lookup\n\nQuery = ${address.body.query}\nStatus = ${address.body.status}\n
+    const info = `\`\`\`\n    Ip Lookup\n\nQuery = ${address.body.query}\nStatus = ${address.body.status}\n
+      
       Country = ${address.body.country}\nCountry Code = ${address.body.countryCode}\nRegion name = ${address.body.regionName}\nRegion = ${address.body.region}
+      
       City = ${address.body.city}\nZIP code = ${address.body.zip}\nLatitude / Longitude = ${address.body.lat} / ${address.body.lon}\n
+      
       Timzone = ${address.body.timzone}\n
+      
       ISP = ${address.body.isp}\nORG = ${address.body.org}\nAS = ${address.body.as}\nAS name = ${address.body.asname}\n
+      
       Reverse DNS = ${address.body.reverse}\nMobile = ${address.body.mobile}\nHosting = ${address.body.hosting}\`\`\``
 
-    if (address.body.status === 'fail') return message.channel.send("The address you provided is either blacklisted or invalid.");
+    await message.channel.send(info).then(m => setTimeout(() => m.delete(), 2000));
 
-    await message.channel.send(embed).then(m => deleteMessage(m));
-
-  }
-
-  lookup(ip);
 }
