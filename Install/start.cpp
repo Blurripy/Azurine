@@ -12,7 +12,7 @@ int main()
   #ifdef __unix__
     system ("clear");
   #else
-    system ("cls");
+    system ("cls && Install-Module -Name Figlet");
   #endif
 
   short option;
@@ -23,7 +23,7 @@ int main()
   switch (option) {
     case 1:
     {
-      // Create JSON variable to put it to src/util/config.json
+      // Create JSON variable to put it to src/util/config.json
       const string info[5] {"token", "User ID", "prefix", "blague token from blagues-api.fr", "tenor app key"};
       const string info1[6] {"token", "ownerid", "prefix", "blague_token", "tenor_key"};
       string config[7];
@@ -49,8 +49,8 @@ int main()
       json << config1;
       json.close();
 
-      // Install librairies
-      system ("echo && echo install librairies && echo && npm i");
+      // Install libraries
+      system ("echo && echo install libraries && echo && npm i");
 
       cout << "\n\n.---------------------------------------------------------------------.\n|                   Ready to launch the SelfBot !                     |\n|---------------------------------------------------------------------|\n| Here we go !                                                        |\n| You can download NodeJS (https://nodejs.org/) and run the selfbot ! |\n| Thank's for using my SelfBot made with <3 !                         |\n'---------------------------------------------------------------------'";
       break;
